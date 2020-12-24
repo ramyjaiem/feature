@@ -17,16 +17,15 @@ export async function getUSContacts(page, filter) {
       },
     })
     .then((r) => {
-      result = r.data.contacts;
+      result = r.data;
       console.log(result);
     })
     .catch((e) => alert(e));
   return result;
 }
 
-export async function getALLContacts(page, filter) {
-    let result = null;
-    await axios
+export async function getALLContacts(page, filter, even) {
+    return axios
       .get(api, {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -38,9 +37,8 @@ export async function getALLContacts(page, filter) {
         },
       })
       .then((r) => {
-        result = r.data.contacts;
-        console.log(result);
+
+        return  r.data;
       })
       .catch((e) => alert(e));
-    return result;
   }

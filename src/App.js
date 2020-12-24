@@ -1,8 +1,7 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./pages/home";
-import AllModal from "./components/AllModal";
-import USModal from "./components/USModal";
+import ModalContent from "./components/ModalContent";
 import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
@@ -10,10 +9,10 @@ function App() {
       <Home>
         <Switch>
           <Route path="/AllContacts">
-            <AllModal />
+            <ModalContent type="all" name ="All Contacts"  even/>
           </Route>
           <Route path="/USContacts">
-            <USModal />
+            <ModalContent type="us" name ="US Contacts" />
           </Route>
         </Switch>
       </Home>
